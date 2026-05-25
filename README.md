@@ -108,19 +108,28 @@ Model Accuracy Achieved:
 ```text
 Speech-Emotion-Recognition/
 │
+├── app/
 ├── dataset/
+├── models/
+│   ├── emotion_model.h5
+│   ├── encoder.pkl
+│   └── scaler.pkl
+│
+├── notebooks/
+│
 ├── src/
 │   ├── feature_extraction.py
 │   ├── dataset_loader.py
 │   ├── train.py
+│   ├── train_cnn.py
+│   ├── train_lstm.py
 │   └── predict.py
 │
-├── models/
 ├── requirements.txt
 ├── README.md
+├── .gitignore
 └── main.py
 ```
-
 ## How to Run
 
 ### 1. Install dependencies
