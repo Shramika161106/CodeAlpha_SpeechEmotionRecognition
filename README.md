@@ -23,13 +23,16 @@ To recognize human emotions from speech audio using speech signal processing and
 
 ---
 
-## Dataset Used
+## Dataset
 
-RAVDESS Dataset (Ryerson Audio-Visual Database of Emotional Speech and Song)
+This project uses the RAVDESS dataset for speech emotion recognition.
 
-The dataset contains emotional speech recordings from multiple actors.
+Download dataset from:
+https://zenodo.org/record/1188976
 
----
+After downloading, place it inside:
+
+dataset/
 
 ## Technologies Used
 
@@ -44,14 +47,53 @@ The dataset contains emotional speech recordings from multiple actors.
 
 ## Model Architecture
 
-The project uses:
+## Model Architectures Implemented
 
-- MFCC Feature Extraction
-- Dense Neural Network (DNN)
-- Dropout Layers
-- Softmax Classification
+This project compares multiple deep learning approaches for speech emotion recognition:
+
+### 1. ANN (Artificial Neural Network / Dense Neural Network)
+
+- MFCC feature extraction
+- Dense layers with dropout
+- Best performing model
+
+### 2. CNN (Convolutional Neural Network)
+
+- 1D convolution over MFCC feature representation
+- Moderate performance
+
+### 3. LSTM (Long Short-Term Memory Network)
+
+- Sequence-based model tested on MFCC features
+- Used for temporal speech pattern modeling
 
 ---
+
+## Model Performance Comparison
+
+| Model | Accuracy |
+|--------|----------|
+| ANN (Dense NN) | ~74.55% |
+| CNN | ~65.95% |
+| LSTM | ~35% |
+
+### Observation
+
+ANN achieved the highest performance on the extracted MFCC feature representation.
+
+CNN showed moderate performance.
+
+LSTM underperformed because MFCC features were averaged into fixed-length vectors, reducing temporal sequence information required for effective recurrent modeling.
+
+---
+
+## Future Improvements
+
+- Preserve MFCC time sequences for better LSTM performance
+- Multi-dataset training (RAVDESS + TESS + EMO-DB)
+- Real-time microphone emotion detection
+- Streamlit web deployment
+- Hyperparameter tuning
 
 ## Accuracy
 
@@ -108,4 +150,9 @@ python predict.py
 - Streamlit Web Application
 - CNN/LSTM implementation
 - Better accuracy optimization
-- Multilingual speech emotion recognition
+- Multilingual speech emotion recognition 
+
+
+
+
+

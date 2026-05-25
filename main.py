@@ -1,0 +1,1 @@
+print("Speech Emotion Recognition Project is Ready!")
